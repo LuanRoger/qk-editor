@@ -133,22 +133,24 @@
 
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
-    @apply w-2
+    @apply w-2;
   }
 
   .scrollbar::-webkit-scrollbar-track {
-    @apply bg-background select-none transition-colors;
+    @apply bg-background select-none transition-colors rounded-md;
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-border
+    @apply rounded-full bg-border;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-border
+    @apply bg-border;
   }
 }
 
-.tiptap {
-  @apply outline-none;
+@layer components {
+  .tiptap {
+    @apply outline-none;
+  }
 }

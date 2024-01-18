@@ -1,5 +1,6 @@
 import React from "react";
 import DragWindowRegion from "../components/DragWindowRegion";
+import Footer from "../components/Footer";
 
 export default function BaseLayout({
   children,
@@ -9,7 +10,10 @@ export default function BaseLayout({
   return (
     <>
       <DragWindowRegion />
-      <main>{children}</main>
+      <div className="h-screen flex flex-col justify-stretch p-3 bg-background">
+      {children}
+        <Footer />
+      </div>
     </>
   );
 }
