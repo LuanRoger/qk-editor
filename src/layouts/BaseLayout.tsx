@@ -8,8 +8,8 @@ export default function BaseLayout({
 }) {
   return (
     <>
-    <DragWindowRegion />
-    <main>{children}</main>
+      <DragWindowRegion />
+      <main>{children}</main>
     </>
   );
 }
