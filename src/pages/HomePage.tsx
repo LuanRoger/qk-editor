@@ -5,7 +5,7 @@ import DrawnSection from "./sections/DrawnSection";
 export default function HomePage() {
   return (
     <>
-      <DrawnSection/>
+      <EditorSection />
     </>
   );
 }

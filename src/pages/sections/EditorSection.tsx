@@ -11,6 +11,7 @@ import Text from "@tiptap/extension-text";
 import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
 import StarterKit from "@tiptap/starter-kit";
+import SectionLayout from "../../layouts/SectionLayout";
 
 export default function EditorSection() {
   const editor = useEditor({
@@ -40,7 +41,7 @@ export default function EditorSection() {
   }
 
   return (
-    <>
+    <SectionLayout>
       <div>
         <Button variant="ghost" size="icon" onClick={toggleBold}>
           <Bold />
@@ -49,6 +50,6 @@ export default function EditorSection() {
       <Separator className="my-1" />
       <RichTextEditor editor={editor} />
       <Separator className="my-1" />
-    </>
+    </SectionLayout>
   );
 }
