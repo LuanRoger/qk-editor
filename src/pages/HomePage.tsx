@@ -1,11 +1,13 @@
-import React from "react";
-import EditorSection from "./sections/EditorSection";
-import DrawnSection from "./sections/DrawnSection";
+import React, { ReactNode } from "react";
 
-export default function HomePage() {
+interface HomePageProps {
+  children: ReactNode;
+}
+
+export default function HomePage({ children }: HomePageProps) {
   return (
-    <>
-      <EditorSection />
-    </>
+    <div className="h-full w-full pt-3">
+      {children}
+    </div>
   );
 }

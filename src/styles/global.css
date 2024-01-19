@@ -149,8 +149,6 @@
   }
 }
 
-@layer components {
-  .tiptap {
-    @apply outline-none;
-  }
+.tiptap {
+  @apply outline-none;
 }
