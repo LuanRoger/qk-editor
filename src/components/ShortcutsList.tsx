@@ -8,8 +8,10 @@ interface ShortcutsListProps {
 
 export default function ShortcutsList({ kbdList }: ShortcutsListProps) {
   return (
-    <ul className="flex flex-row items-center gap-2 transition-opacity duration-300 
-    opacity-40 hover:opacity-100">
+    <ul
+      className="flex flex-row items-center gap-2 transition-opacity duration-300 
+      opacity-40 hover:opacity-100"
+    >
       {kbdList.map((kbd, index) => (
         <>
           <li key={index}>{kbd}</li>

@@ -8,7 +8,7 @@ interface ShortcutProps {
 
 export default function Shortcut({ children, name }: ShortcutProps) {
   return (
-    <small className="flex gap-1">
+    <small className="select-none">
       <span className="flex gap-1 items-center">
         {children instanceof Array
           ? children.map((child, index) => (

@@ -1,15 +1,27 @@
 import React, { ReactElement, useContext } from "react";
-import { Button } from "./ui/button";
-import { Moon } from "lucide-react";
 import ShortcutsList from "./ShortcutsList";
 import Shortcut from "./Shortcut";
 import Kbd from "./Kbd";
 import { SectionContext } from "../App";
+import ToggleThemeButton from "./ToggleThemeButton";
 
 const editorShortcuts: ReactElement<typeof Shortcut>[] = [
   <Shortcut name="Exit">
     <Kbd>Alt</Kbd>
     <Kbd>F4</Kbd>
+  </Shortcut>,
+  <Shortcut name="Bold">
+    <Kbd>Ctrl</Kbd>
+    <Kbd>b</Kbd>
+  </Shortcut>,
+  <Shortcut name="Italic">
+    <Kbd>Ctrl</Kbd>
+    <Kbd>i</Kbd>
+  </Shortcut>,
+  <Shortcut name="Highlight">
+    <Kbd>Ctrl</Kbd>
+    <Kbd>Shift</Kbd>
+    <Kbd>h</Kbd>
   </Shortcut>,
 ];
 const whiteboardShortcuts: ReactElement<typeof Shortcut>[] = [
@@ -21,11 +33,6 @@ const whiteboardShortcuts: ReactElement<typeof Shortcut>[] = [
 
 export default function Footer() {
   const section = useContext(SectionContext);
-
-  function toggleTheme() {
-    const root = document.documentElement;
-    root.classList.toggle("dark");
-  }
 
   return (
     <footer className="flex items-center justify-between mb-16">
@@ -39,9 +46,7 @@ export default function Footer() {
         }
       </aside>
       <aside>
-        <Button variant="ghost" size="icon" onClick={toggleTheme}>
-          <Moon size={16} />
-        </Button>
+        <ToggleThemeButton/>
       </aside>
     </footer>
   );
