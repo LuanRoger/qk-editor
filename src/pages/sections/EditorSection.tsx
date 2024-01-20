@@ -1,9 +1,7 @@
 import { Separator } from "@radix-ui/react-separator";
 import { useEditor } from "@tiptap/react";
-import { Bold } from "lucide-react";
 import React from "react";
 import RichTextEditor from "../../components/RichTextEditor";
-import { Button } from "../../components/ui/button";
 import Document from "@tiptap/extension-document";
 import Paragraph from "@tiptap/extension-paragraph";
 import Highlight from "@tiptap/extension-highlight";
@@ -12,6 +10,7 @@ import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
 import StarterKit from "@tiptap/starter-kit";
 import SectionLayout from "../../layouts/SectionLayout";
+import RichTextFormaters from "../../components/RichTextFormaters";
 
 export default function EditorSection() {
   const editor = useEditor({
@@ -36,17 +35,9 @@ export default function EditorSection() {
     ],
   });
 
-  function toggleBold() {
-    editor.chain().focus().toggleBold().run();
-  }
-
   return (
     <SectionLayout>
-      <div>
-        <Button variant="ghost" size="icon" onClick={toggleBold}>
-          <Bold />
-        </Button>
-      </div>
+      <RichTextFormaters editor={editor} />
       <Separator className="my-1" />
       <RichTextEditor editor={editor} />
       <Separator className="my-1" />
